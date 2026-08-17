@@ -1,0 +1,807 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #11162d;
+    background: #ffffff;
+}
+
+
+:root {
+
+    --blue: #5367f5;
+    --purple: #7b3fe4;
+    --dark: #11162d;
+    --gray: #687087;
+    --light: #f7f8ff;
+
+}
+.logo img {
+    width: 100px;
+    height: 120px;
+    object-fit: contain;
+}
+
+
+/* ================= NAVBAR ================= */
+.navbar {
+
+    height: 82px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #11162d;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+}
+/* LOGO */
+.logo img {
+    width: 100px;
+    height: 120px;
+    object-fit: contain;
+}
+/* NAV LINKS */
+nav {
+    display: flex;
+    gap: 32px;
+}
+nav a {
+    text-decoration: none;
+    color:whitesmoke;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav a.active {
+    color:gray;
+    font-weight: 600;
+}
+/* LOGIN */
+.get-started {
+    border: none;
+    padding: 11px 27px;
+    border-radius: 9px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    background:
+        linear-gradient(
+            110deg,
+            #4369f5,
+            #8241df
+        );
+    box-shadow:
+        0 8px 20px
+        rgba(91,80,230,0.25);
+}
+
+
+
+
+
+/* ================= HERO ================= */
+
+.about-hero {
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(83,103,245,0.15),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(123,63,228,0.15),
+            transparent 30%
+        ),
+
+        #fafaff;
+        background:
+        linear-gradient(
+            rgba(238, 240, 255, 0.75),
+            rgba(238, 240, 255, 0.75)
+        ),
+         url("back6.jpeg");
+        
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: #11162d;
+
+
+    padding: 100px 8%;
+
+    text-align: center;
+
+}
+
+
+.small-title,
+.section-label {
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.about-hero h1 {
+
+    margin-top: 15px;
+
+    font-size: 58px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+}
+
+
+.about-hero h1 span {
+
+    color: var(--purple);
+}
+
+
+.hero-text {
+
+    max-width: 720px;
+
+    margin: 20px auto 0;
+
+    color: var(--gray);
+
+    line-height: 1.8;
+}
+
+
+
+/* ================= STORY ================= */
+
+.story {
+
+    padding: 100px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.story-text h2 {
+
+    margin-top: 12px;
+
+    font-size: 38px;
+}
+
+
+.story-text h2 span {
+
+    color: var(--purple);
+}
+
+
+.story-text p {
+
+    margin-top: 20px;
+
+    color: var(--gray);
+
+    line-height: 1.8;
+}
+
+
+.question {
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-left: 4px solid var(--purple);
+
+    background: #f5f3ff;
+
+    color: var(--purple);
+}
+
+
+.story-card {
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0f2ff,
+            #f8efff
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(70,70,150,0.10);
+}
+
+
+.idea-icon {
+
+    font-size: 50px;
+}
+
+
+.story-card h3 {
+
+    margin: 8px 0;
+
+}
+
+
+.arrow {
+
+    color: var(--purple);
+
+    font-size: 22px;
+}
+
+
+.story-card .highlight {
+
+    color: var(--purple);
+
+}
+
+
+
+/* ================= PROBLEM ================= */
+
+.problem {
+
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background: var(--light);
+    background:
+        linear-gradient(
+            rgba(238, 240, 255, 0.75),
+            rgba(238, 240, 255, 0.75)
+        ),
+         url("back8.jpeg");
+        
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: #11162d;
+
+
+    padding: 100px 8%;
+
+    text-align: center;
+}
+
+
+.problem h2 {
+
+    margin-top: 12px;
+
+    font-size: 38px;
+}
+
+
+.problem h2 span {
+
+    color: var(--purple);
+}
+
+
+.section-text {
+
+    max-width: 650px;
+
+    margin: 15px auto 0;
+
+    color: var(--gray);
+
+    line-height: 1.7;
+}
+
+
+.problem-grid {
+
+    max-width: 1050px;
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+}
+
+
+.problem-card {
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border: 1px solid #edf0ff;
+
+    transition: 0.3s;
+}
+
+
+.problem-card:hover {
+
+    transform: translateY(-7px);
+
+}
+
+
+.problem-card > div {
+
+    font-size: 40px;
+}
+
+
+.problem-card h3 {
+
+    margin-top: 12px;
+}
+
+
+.problem-card p {
+
+    margin-top: 8px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* ================= MISSION ================= */
+
+.mission {
+
+    padding: 90px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+
+.mission-card {
+
+    padding: 45px;
+
+    border-radius: 22px;
+
+    background: #fbfbff;
+
+    border: 1px solid #edf0ff;
+}
+
+
+.mission-icon {
+
+    font-size: 45px;
+}
+
+
+.mission-card h2 {
+
+    margin-top: 10px;
+
+    font-size: 32px;
+}
+
+
+.mission-card h2 span {
+
+    color: var(--purple);
+}
+
+
+.mission-card > p:last-child {
+
+    margin-top: 15px;
+
+    color: var(--gray);
+
+    line-height: 1.8;
+}
+
+
+
+/* ================= APPROACH ================= */
+
+.approach {
+
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background: var(--light);
+}
+
+
+.approach h2 {
+
+    margin-top: 10px;
+
+    font-size: 38px;
+}
+
+
+.approach h2 span {
+
+    color: var(--purple);
+}
+
+
+.approach-grid {
+
+    max-width: 1000px;
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+}
+
+
+.approach-card {
+
+    padding: 30px;
+
+    text-align: left;
+
+    background: white;
+
+    border-radius: 20px;
+
+}
+
+
+.approach-card > span {
+
+    color: #a5aac2;
+
+    font-weight: 700;
+
+}
+
+
+.approach-icon {
+
+    margin-top: 10px;
+
+    font-size: 38px;
+}
+
+
+.approach-card h3 {
+
+    margin-top: 10px;
+
+}
+
+
+.approach-card p {
+
+    margin-top: 8px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* ================= LEVELS ================= */
+
+.levels {
+    background:
+        linear-gradient(
+            rgba(238, 240, 255, 0.75),
+            rgba(238, 240, 255, 0.75)
+        ),
+         url("back7.jpeg");
+        
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: #11162d;
+
+
+    padding: 100px 8%;
+
+    text-align: center;
+
+
+    padding: 100px 8%;
+
+    text-align: center;
+}
+
+
+.levels h2 {
+
+    margin-top: 10px;
+
+    font-size: 38px;
+}
+
+
+.levels h2 span {
+
+    color: var(--purple);
+}
+
+
+.level-line {
+
+    max-width: 1000px;
+
+    margin: 50px auto 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.level-line div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    font-size: 30px;
+}
+
+
+.level-line strong {
+
+    font-size: 13px;
+
+    color: var(--dark);
+}
+
+
+
+/* ================= CTA ================= */
+
+.cta {
+
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef1ff,
+            #f8efff
+        );
+}
+
+
+.cta h2 {
+
+    font-size: 45px;
+
+}
+
+
+.cta h2 span {
+
+    color: var(--purple);
+}
+
+
+.cta p {
+
+    margin: 15px 0 25px;
+
+    color: var(--gray);
+}
+
+
+.cta-button {
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            110deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    cursor: pointer;
+}
+
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background: var(--dark);
+}
+
+
+footer img {
+
+    width: 145px;
+
+    height: 55px;
+
+    object-fit: contain;
+}
+
+
+footer p {
+
+    margin-top: 8px;
+
+    color: #d9ddec;
+}
+
+
+.footer-links {
+
+    margin: 20px 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+
+.footer-links a {
+
+    color: #c8cde0;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+
+footer small {
+
+    color: #858ca5;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 12px;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission {
+        grid-template-columns: 1fr;
+    }
+
+    .level-line {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    nav {
+        display: none;
+    }
+
+    .about-hero h1 {
+        font-size: 42px;
+    }
+
+    .story,
+    .problem,
+    .mission,
+    .approach,
+    .levels {
+        padding: 65px 6%;
+    }
+
+}
