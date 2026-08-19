@@ -76,22 +76,25 @@ nav a.active {
     font-weight: 600;
 }
 /* LOGIN */
-.get-started {
-    border: none;
-    padding: 11px 27px;
-    border-radius: 9px;
+.get-started-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #4f6df5, #7c3aed);
     color: white;
-    font-weight: 600;
-    cursor: pointer;
-    background:
-        linear-gradient(
-            110deg,
-            #4369f5,
-            #8241df
-        );
-    box-shadow:
-        0 8px 20px
-        rgba(91,80,230,0.25);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 18px rgba(79, 109, 245, 0.35);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.get-started-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.45);
+    background: linear-gradient(135deg, #7c3aed, #4f6df5);
 }
 
 /* SLOGAN */
