@@ -1491,3 +1491,27 @@ footer small {
     }
 
 }
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .get-started-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 25px;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+}
