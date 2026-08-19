@@ -14,7 +14,9 @@ body {
     color: var(--dark);
 
     background: white;
-
+      width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
    
 }
 /* COLORS*/
@@ -942,14 +944,6 @@ footer small {
         padding: 0 4%;
 
     }
-
-
-    nav {
-
-        display: none;
-
-    }
-
 
     .login-btn {
 
