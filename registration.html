@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gyaankriya | Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            min-height: 60vh;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding-right: 8%;
+
+    background:
+        linear-gradient(
+            rgba(245, 247, 255, 0.55),
+            rgba(245, 247, 255, 0.55)
+        ),
+        url("regback.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+        
+
+        /* Main Card */
+        .registration-container {
+            width: 400px;
+    padding: 18px 25px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    
+    
+    box-shadow: 0 20px 60px rgba(24, 42, 90, 0.18);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo */
+        .logo-icon {
+     width: 45px;
+    height: 45px;
+    font-size: 22px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding : right;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: white;
+    box-shadow: 0 8px 20px rgba(20, 40, 80, 0.15);
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+        .logo h1 {
+            color: #12213f;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo h1 span {
+            color: #6654e8;
+        }
+
+        .tagline {
+            text-align: center;
+            color: #6b7280;
+            font-size: 11px;
+    margin-top: 2px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #667085;
+            font-size: 12px;
+          margin: 8px 0 12px;
+            line-height: 1.5;
+        }
+
+        /* Form */
+        .form-group {
+             margin-bottom: 8px;
+        }
+
+        label {
+            display: block;
+            color: #17233d;
+           font-size: 12px;
+    margin-bottom: 4px;
+        }
+
+        input,
+        select {
+             padding: 9px 11px;
+    font-size: 13px;
+    border-radius: 8px;
+
+            border: 1px solid #d8dce7;
+            
+
+           
+            outline: none;
+
+            background: #fbfcff;
+
+            transition: 0.25s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #6654e8;
+
+            box-shadow:
+                0 0 0 3px rgba(102, 84, 232, 0.10);
+
+            background: white;
+        }
+
+        /* Password */
+        .password-box {
+            position: relative;
+        }
+
+        .password-box input {
+            padding-right: 55px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            border: none;
+            background: transparent;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+        /* Button */
+        .register-btn {
+           padding: 10px;
+    font-size: 14px;
+    margin-top: 4px;
+            border: none;
+            border-radius: 11px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #173b75,
+                    #4f6df5,
+                    #7c3aed
+                );
+
+            color: white;
+
+           
+            font-weight: 700;
+
+            cursor: pointer;
+
+            margin-top: 7px;
+
+            transition: 0.25s;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px rgba(79, 109, 245, 0.28);
+        }
+
+        .register-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Message */
+        .message {
+            display: none;
+
+            margin-top: 18px;
+            padding: 12px;
+
+            border-radius: 10px;
+
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .success {
+            display: block;
+            background: #e9f9ef;
+            color: #16733a;
+        }
+
+        .error {
+            display: block;
+            background: #fff0f0;
+            color: #c62828;
+        }
+
+        /* Login */
+        .login-text {
+            margin-top: 10px;
+    font-size: 12px;
+            color: #667085;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .login-text a {
+            color: #6654e8;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .login-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer-text {
+           margin-top: 10px;
+    font-size: 10px;
+
+            color: #98a2b3;
+            
+        }
+
+        /* Mobile */
+        @media (max-width: 520px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .registration-container {
+                width: 100%;
+                padding: 28px 22px;
+            }
+
+            .logo h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="registration-container">
+
+        <!-- Gyaankriya Logo -->
+        <div class="logo">
+
+            <div class="logo-icon">
+                 <img src="Remove background project - 17 August 2026 at 15.01.34.png"
+             alt="Gyaankriya Logo">
+            </div>
+
+            <h1>
+                Gyaank<span>Kriya</span>
+            </h1>
+
+            <p class="tagline">
+                Learn • Explore • Create • Grow
+            </p>
+
+        </div>
+
+
+        <!-- Registration Form -->
+        <form id="registrationForm">
+
+            <div class="form-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="role">
+                    I am a
+                </label>
+
+                <select id="role" required>
+
+                    <option value="">
+                        Select your role
+                    </option>
+
+                    <option value="student">
+                        Student
+                    </option>
+
+                    <option value="teacher">
+                        Teacher
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-group">
+
+                <label for="password">
+                    Create Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        onclick="togglePassword('password', this)"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        onclick="togglePassword('confirmPassword', this)"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="register-btn"
+            >
+                Create Account →
+            </button>
+
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+        </form>
+
+
+        <p class="login-text">
+
+            Already have an account?
+
+            <a href="#">
+                Login
+            </a>
+
+        </p>
+
+
+        <p class="footer-text">
+            © 2026 Gyaankriya • Empowering learners through knowledge
+        </p>
+
+    </div>
+
+
+    <script>
+
+        /* Show / Hide Password */
+
+        function togglePassword(id, button) {
+
+            const input =
+                document.getElementById(id);
+
+            if (input.type === "password") {
+
+                input.type = "text";
+                button.textContent = "🙈";
+
+            } else {
+
+                input.type = "password";
+                button.textContent = "👁️";
+
+            }
+
+        }
+
+
+        /* Registration Validation */
+
+        document
+            .getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const phone =
+                    document.getElementById("phone").value.trim();
+
+                const role =
+                    document.getElementById("role").value;
+
+                const password =
+                    document.getElementById("password").value;
+
+                const confirmPassword =
+                    document.getElementById("confirmPassword").value;
+
+                const message =
+                    document.getElementById("message");
+
+
+                /* Password Match */
+
+                if (password !== confirmPassword) {
+
+                    message.className =
+                        "message error";
+
+                    message.textContent =
+                        "⚠️ Passwords do not match.";
+
+                    return;
+
+                }
+
+
+                /* Phone Validation */
+
+                if (!/^[0-9]{10}$/.test(phone)) {
+
+                    message.className =
+                        "message error";
+
+                    message.textContent =
+                        "⚠️ Please enter a valid 10-digit phone number.";
+
+                    return;
+
+                }
+
+
+                /* Success */
+
+                message.className =
+                    "message success";
+
+                message.textContent =
+                    "🎉 Welcome to Gyaankriya, " +
+                    name +
+                    "! Your registration was successful.";
+
+            });
+
+    </script>
+
+</body>
+</html>
+```
