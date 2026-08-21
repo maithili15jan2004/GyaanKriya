@@ -505,76 +505,122 @@
         /* Registration Validation */
 
         document
-            .getElementById("registrationForm")
-            .addEventListener("submit", function(event) {
+    .getElementById("registrationForm")
+    .addEventListener("submit", async function(event) {
 
-                event.preventDefault();
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const role =
+            document.getElementById("role").value;
+
+        const password =
+            document.getElementById("password").value;
+
+        const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+        const message =
+            document.getElementById("message");
 
 
-                const name =
-                    document.getElementById("name").value.trim();
+        // Password Match
+        if (password !== confirmPassword) {
 
-                const email =
-                    document.getElementById("email").value.trim();
+            message.className = "message error";
+            message.textContent =
+                "⚠️ Passwords do not match.";
 
-                const phone =
-                    document.getElementById("phone").value.trim();
-
-                const role =
-                    document.getElementById("role").value;
-
-                const password =
-                    document.getElementById("password").value;
-
-                const confirmPassword =
-                    document.getElementById("confirmPassword").value;
-
-                const message =
-                    document.getElementById("message");
+            return;
+        }
 
 
-                /* Password Match */
+        // Phone Validation
+        if (!/^[0-9]{10}$/.test(phone)) {
 
-                if (password !== confirmPassword) {
+            message.className = "message error";
+            message.textContent =
+                "⚠️ Please enter a valid 10-digit phone number.";
 
-                    message.className =
-                        "message error";
+            return;
+        }
 
-                    message.textContent =
-                        "⚠️ Passwords do not match.";
 
-                    return;
+        // Send data to FastAPI Backend
+        try {
 
+            const response = await fetch(
+                "http://127.0.0.1:8000/register",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        role: role,
+                        password: password
+                    })
                 }
+            );
 
 
-                /* Phone Validation */
-
-                if (!/^[0-9]{10}$/.test(phone)) {
-
-                    message.className =
-                        "message error";
-
-                    message.textContent =
-                        "⚠️ Please enter a valid 10-digit phone number.";
-
-                    return;
-
-                }
+            const data = await response.json();
 
 
-                /* Success */
+            // Backend Success
+            if (response.ok && data.success) {
 
-                message.className =
-                    "message success";
+                message.className = "message success";
 
                 message.textContent =
                     "🎉 Welcome to Gyaankriya, " +
                     name +
                     "! Your registration was successful.";
 
-            });
+                document
+                    .getElementById("registrationForm")
+                    .reset();
 
+            }
+
+            // Backend Error
+            else {
+
+                message.className = "message error";
+
+                message.textContent =
+                    "⚠️ " +
+                    (data.message || "Registration failed.");
+
+            }
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+            message.className = "message error";
+
+            message.textContent =
+                "❌ Unable to connect to the server. Please try again.";
+
+        }
+
+    });
     </script>
 
 </body>
