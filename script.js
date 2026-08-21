@@ -77,3 +77,7 @@ function nextStory() {
 /* Change story every 5 seconds */
 
 setInterval(nextStory, 5000);
+if (data.success) {
+    alert("Registration successful!");
+    window.location.href = "index.html";
+}
